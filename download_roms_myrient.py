@@ -2,10 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import unquote
 import os
-
 # URL base para scrapear las plataformas disponibles
 BASE_URL = 'https://myrient.erista.me/files/Redump/'
-
 # Carpeta de destino para las descargas
 download_folder = r"C:\\Users\\mpzfm\\Downloads\\PS3"
 
@@ -16,7 +14,6 @@ def obtener_enlaces(url):
         soup = BeautifulSoup(response.text, 'html.parser')
         rows = soup.find_all('tr')
         download_links = []
-
         for row in rows:
             # Busca los enlaces y el tamaño en cada fila
             link = row.find('a')
